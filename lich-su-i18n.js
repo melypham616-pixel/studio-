@@ -23,12 +23,3 @@
   if (cur === 'en') set('en');
 })();
 
-(function () {
-  var b = document.getElementById('burger'), h = document.querySelector('header');
-  if (!b || !h) return;
-  function set(o) { h.classList.toggle('open', o); b.setAttribute('aria-expanded', o ? 'true' : 'false'); }
-  b.addEventListener('click', function (e) { e.stopPropagation(); set(!h.classList.contains('open')); });
-  h.querySelectorAll('nav a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
-  document.addEventListener('click', function (e) { if (!h.contains(e.target)) set(false); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
-})();
