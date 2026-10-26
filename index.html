@@ -200,6 +200,21 @@
     .tiles { grid-template-columns: 1fr; }
   }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+  /* ---------- mobile menu ---------- */
+  .burger { display: none; background: transparent; border: 1px solid var(--peach); width: 40px; height: 34px; padding: 0; margin-left: 10px; cursor: pointer; flex-direction: column; gap: 5px; align-items: center; justify-content: center; }
+  .burger span { display: block; width: 18px; height: 1.5px; background: var(--peach); transition: transform .3s, opacity .3s; }
+  header.open .burger span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  header.open .burger span:nth-child(2) { opacity: 0; }
+  header.open .burger span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  @media (max-width: 900px) {
+    .burger { display: flex; }
+    header .lang { margin-left: auto; }
+    header nav { display: flex !important; position: fixed; top: 64px; left: 0; right: 0; flex-direction: column; gap: 0; background: rgba(11,11,11,.98); border-bottom: 1px solid var(--line); padding: 6px 0 10px; opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity .25s, transform .25s; }
+    header.open nav { opacity: 1; transform: none; pointer-events: auto; }
+    header.open { background: rgba(11,11,11,.98); }
+    header nav a { padding: 16px 24px; font-size: 14px; border-bottom: 1px solid var(--line); opacity: 1; }
+    header nav a:last-child { border-bottom: 0; }
+  }
 </style>
 </head>
 <body>
@@ -214,6 +229,7 @@
       <a data-i="3" href="#loi-ket">Lời kết</a>
     </nav>
     <button class="lang" id="lang" type="button" aria-label="Switch language">EN</button>
+    <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
