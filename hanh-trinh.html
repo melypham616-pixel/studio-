@@ -237,6 +237,12 @@
   .feature p + p { margin-top: 12px; }
   .feature .key { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--line); font: italic 500 18px/1.4 var(--display); color: var(--cream); }
   .feature .key b { display: block; font: 600 11px var(--serif); letter-spacing: .24em; text-transform: uppercase; color: var(--ochre); margin-bottom: 4px; font-style: normal; }
+  .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 0; }
+  .cols .col { display: block; min-height: 0; background: var(--cream); color: var(--ink); padding: 36px 32px 40px; position: relative; }
+  .cols .col .no { font: 900 64px/.8 var(--display); color: var(--maroon); margin-bottom: 22px; letter-spacing: -.04em; }
+  .cols .col h3 { font: 800 22px/1.2 var(--display); margin-bottom: 8px; color: var(--ink); }
+  .cols .col p { font-size: 17px; line-height: 1.5; color: #4a443b; text-align: left; }
+  @media (max-width: 900px) { .cols { grid-template-columns: 1fr; } .cols .col { padding: 30px 24px 32px; } }
   .grp { max-width: 1120px; margin: 40px auto 22px; padding: 0 28px; font: italic 500 clamp(22px, 2.4vw, 28px)/1.2 var(--display); color: var(--ochre); }
   .grp small { display: block; margin-top: 4px; font: 400 15px var(--serif); color: var(--muted); letter-spacing: .04em; font-style: normal; }
   .nameless { max-width: 1120px; margin: 6px auto 0; padding: 26px 36px; font: italic 400 19px/1.5 var(--display); color: var(--cream); border: 1px solid var(--line); }
