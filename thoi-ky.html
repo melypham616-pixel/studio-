@@ -245,6 +245,18 @@
     .cmp tr { padding: 14px 0; border-top: 1px solid rgba(244,232,210,.28); }
     .cmp td { border: 0; padding: 3px 0; white-space: normal; }
   }
+  /* ---------- mobile: menu always visible as a swipeable row (no button needed) ---------- */
+  @media (max-width: 900px) {
+    html { scroll-padding-top: 112px; }
+    .burger { display: none !important; }
+    header { background: rgba(11,11,11,.97) !important; border-bottom: 1px solid var(--line); }
+    header .wrap { height: auto !important; flex-wrap: wrap; align-items: center; padding-top: 10px; padding-bottom: 0; }
+    header .brand { font-size: 16px; }
+    header .lang { margin-left: auto !important; }
+    header nav { display: flex !important; position: static !important; order: 3; width: 100%; flex-direction: row !important; gap: 14px; overflow-x: auto; justify-content: space-between; padding: 10px 0 12px; margin-top: 8px; border-top: 1px solid var(--line); border-bottom: 0 !important; background: none !important; opacity: 1 !important; transform: none !important; pointer-events: auto !important; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    header nav::-webkit-scrollbar { display: none; }
+    header nav a { white-space: nowrap; padding: 4px 0 !important; border: 0 !important; font-size: 11px; letter-spacing: .08em; opacity: 1; }
+  }
 </style>
 </head>
 <body>
