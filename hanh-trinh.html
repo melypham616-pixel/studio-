@@ -243,6 +243,53 @@
   .cols .col h3 { font: 800 22px/1.2 var(--display); margin-bottom: 8px; color: var(--ink); }
   .cols .col p { font-size: 17px; line-height: 1.5; color: #4a443b; text-align: left; }
   @media (max-width: 900px) { .cols { grid-template-columns: 1fr; } .cols .col { padding: 30px 24px 32px; } }
+  .hero2 { position: relative; min-height: 82vh; display: flex; align-items: center; justify-content: center; overflow: hidden; text-align: center; padding: 130px 0 90px; border-bottom: 1px solid var(--line); }
+  .hero2 .strips { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+  .hero2 .strips div { overflow: hidden; }
+  .hero2 .strips img { filter: sepia(.4) saturate(1.1) brightness(.85) contrast(1.05); transform: scale(1.08); }
+  .hero2::before { content: ""; position: absolute; inset: 0; z-index: 1; background: radial-gradient(ellipse at center, rgba(11,11,11,.35), rgba(11,11,11,.9) 88%), linear-gradient(180deg, rgba(11,11,11,.7), transparent 28%, transparent 60%, var(--black)); }
+  .hero2 .in { position: relative; z-index: 2; max-width: 920px; padding: 0 24px; }
+  .hero2 .kicker { font: 400 15px var(--serif); letter-spacing: .5em; text-transform: uppercase; color: var(--peach); margin-bottom: 14px; padding-left: .5em; }
+  .hero2 h1 { font: 400 clamp(54px, 10vw, 140px)/.95 var(--display); text-transform: uppercase; color: var(--peach); text-shadow: 0 6px 50px rgba(0,0,0,.6); letter-spacing: .02em; }
+  .hero2 p { margin: 24px auto 0; max-width: 700px; font: italic 400 clamp(19px, 2vw, 24px)/1.45 var(--serif); color: var(--cream); }
+  .stack { display: grid; gap: 22px; justify-items: center; }
+  .jr li.has-img { grid-template-columns: 170px 1fr 280px; }
+  .jimg { margin: 0; align-self: start; }
+  .jimg img { aspect-ratio: 4 / 3; border-radius: 3px; box-shadow: 0 14px 30px rgba(0,0,0,.5); filter: sepia(.18); transition: transform .8s ease; }
+  .jimg:hover img { transform: scale(1.03); }
+  .jimg figcaption { margin-top: 9px; font: italic 400 14px/1.35 var(--serif); color: var(--muted); }
+  .mosaic4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; max-width: 1120px; margin: 0 auto; }
+  .mosaic4 figure { position: relative; overflow: hidden; aspect-ratio: 3 / 4; background: #111; }
+  .mosaic4 img { transition: transform 1.2s ease; filter: saturate(1.05); }
+  .mosaic4 figure:hover img { transform: scale(1.06); }
+  .mosaic4 figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 16px 14px; background: linear-gradient(transparent, rgba(0,0,0,.88)); font: italic 400 15px/1.3 var(--serif); color: #fff; }
+  .an .pic { position: relative; margin: -40px -36px 24px; height: 240px; overflow: hidden; background: #111; }
+  .an .pic img { transition: transform 1.2s ease; filter: grayscale(.15) contrast(1.03); }
+  .an:hover .pic img { transform: scale(1.05); }
+  .an .pic.wm { display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.1); }
+  .an.olive .pic.wm, .an.brown .pic.wm { background: rgba(255,255,255,.05); }
+  .an .pic.wm { color: #2b1a12; }
+  .an.olive .pic.wm, .an.brown .pic.wm { color: var(--cream); }
+  .an.taupe .pic.wm { color: #2a2218; }
+  .an.peach .pic.wm span { -webkit-text-stroke-color: #2b1a12; }
+  .an.olive .pic.wm span, .an.brown .pic.wm span { -webkit-text-stroke-color: #f4e8d2; }
+  .an.taupe .pic.wm span { -webkit-text-stroke-color: #2a2218; }
+  .an .pic.wm span { font: 900 clamp(70px, 9vw, 112px)/1 var(--display); color: transparent; -webkit-text-stroke: 1.4px currentColor; opacity: .45; letter-spacing: -.04em; }
+  .band { position: relative; margin: 20px 0 0; padding: 150px 0; text-align: center; background-size: cover; background-position: center 35%; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .band::before { content: ""; position: absolute; inset: 0; background: rgba(11,11,11,.74); }
+  .band .in { position: relative; max-width: 920px; margin: 0 auto; padding: 0 24px; }
+  .band q { display: block; text-wrap: balance; quotes: none; font: italic 400 clamp(30px, 4.6vw, 58px)/1.2 var(--display); color: var(--cream); }
+  .band cite { display: block; margin-top: 24px; font: 400 14px var(--serif); letter-spacing: .3em; text-transform: uppercase; color: var(--peach); font-style: normal; }
+  @media (max-width: 900px) {
+    .jr li.has-img { grid-template-columns: 1fr; }
+    .jimg { max-width: 420px; }
+    .mosaic4 { grid-template-columns: 1fr 1fr; }
+    .an .pic { margin: -32px -22px 22px; height: 210px; }
+    .band { padding: 100px 0; }
+    .hero2 { min-height: 70vh; padding-top: 110px; }
+    .hero2 .strips { grid-template-columns: repeat(2, 1fr); }
+    .hero2 .strips div:nth-child(n+3) { display: none; }
+  }
   .grp { max-width: 1120px; margin: 40px auto 22px; padding: 0 28px; font: italic 500 clamp(22px, 2.4vw, 28px)/1.2 var(--display); color: var(--ochre); }
   .grp small { display: block; margin-top: 4px; font: 400 15px var(--serif); color: var(--muted); letter-spacing: .04em; font-style: normal; }
   .nameless { max-width: 1120px; margin: 6px auto 0; padding: 26px 36px; font: italic 400 19px/1.5 var(--display); color: var(--cream); border: 1px solid var(--line); }
@@ -274,13 +321,11 @@
   </div>
 </header>
 <main>
-  <section class="ph">
-    <div class="wrap">
+  <section class="hero2"><div class="strips" aria-hidden="true"><div><img src="images/t/h-hcm1922.jpg" alt=""></div><div><img src="images/t/h-marseille.jpg" alt=""></div><div><img src="images/t/h-canton.jpg" alt=""></div><div><img src="images/t/h-pacbo.jpg" alt=""></div></div><div class="in">
       <div data-i="180" class="kicker">Hành trình</div>
       <h1 data-i="289">Đường cứu nước</h1>
       <p data-i="288">Từ người thanh niên 21 tuổi rời bến Nhà Rồng đến những con người cùng dân tộc đi qua các cột mốc kháng chiến: hoàn cảnh, hành trình, bài học và cách truyền lại cho thế hệ sau.</p>
-    </div>
-  </section>
+    </div></section>
   <div class="sec-head wrap reveal" id="hoan-canh">
     <div data-i="287" class="kicker">01 — Hoàn cảnh</div>
     <h2 data-i="286">Một thanh niên <em>21 tuổi</em> và một đất nước mất độc lập</h2>
@@ -289,10 +334,13 @@
   <section class="block" style="border-top:0;padding-top:20px">
     <div class="wrap">
       <div class="split" style="margin-top:0">
-        <figure class="plate tall reveal" style="max-width:420px;justify-self:center">
+        <div class="stack"><figure class="plate tall reveal" style="max-width:420px;justify-self:center">
           <div class="ph"><img src="images/hcm1922.jpg" alt="Chân dung Nguyễn Ái Quốc, 1922" loading="lazy" style="object-position: 50% 25%"></div>
           <figcaption data-i="284">Chân dung Nguyễn Ái Quốc, Paris, 1922</figcaption>
-        </figure>
+        </figure><figure class="plate reveal" style="max-width:420px">
+            <div class="ph"><img src="images/quochoc.jpg" alt="Trường Quốc Học, Huế" loading="lazy" style="object-position: 50% 55%"></div>
+            <figcaption data-i="355">Trường Quốc Học, Huế, nơi Nguyễn Tất Thành từng theo học</figcaption>
+          </figure></div>
         <ol class="causes reveal">
           <li><div><h3 data-i="283">Quê hương và gia đình</h3><p data-i="282">Nguyễn Tất Thành sinh ngày 19/5/1890 ở Nghệ An. Cha là Nguyễn Sinh Sắc, đỗ Phó bảng năm 1901 và từng làm quan; gia đình sống giữa những năm người dân chịu thuế nặng, phu dịch và mất đất. Những điều chứng kiến thuở nhỏ, cùng thời gian học ở Huế và dạy học ở Phan Thiết, hình thành mối quan tâm sâu sắc đến vận mệnh dân tộc.</p></div></li>
           <li><div><h3 data-i="281">Những con đường đã thử</h3><p data-i="280">Cần Vương, Đông Du, Duy Tân đều cho thấy lòng yêu nước mạnh mẽ nhưng chưa đem lại độc lập. Người kính trọng các bậc tiền bối, song nhận thấy cần tìm một con đường khác, dựa trên hiểu biết về thế giới.</p></div></li>
@@ -314,15 +362,15 @@
       </figure>
       <ol class="jr reveal">
         <li><div class="y">5/6/1911</div><div><h3 data-i="273">Rời bến Nhà Rồng</h3><p data-i="272">Lên tàu Amiral Latouche-Tréville với tên Văn Ba, làm phụ bếp để có tiền đi. Tháng 7/1911 tàu đến Marseille (Pháp).</p></div></li>
-        <li><div class="y">1911 – 1917</div><div><h3 data-i="271">Đi để hiểu</h3><p data-i="270">Theo các tiểu sử phổ biến, Người đi qua nhiều cảng ở châu Phi, châu Mỹ và châu Âu, sống một thời gian ở Anh, làm nhiều nghề để kiếm sống và quan sát đời sống của người lao động, người dân thuộc địa ở nhiều nước.</p></div></li>
+        <li class="has-img"><div class="y">1911 – 1917</div><div><h3 data-i="271">Đi để hiểu</h3><p data-i="270">Theo các tiểu sử phổ biến, Người đi qua nhiều cảng ở châu Phi, châu Mỹ và châu Âu, sống một thời gian ở Anh, làm nhiều nghề để kiếm sống và quan sát đời sống của người lao động, người dân thuộc địa ở nhiều nước.</p></div><figure class="jimg"><img src="images/marseille.jpg" alt="Cảng Marseille, Pháp" loading="lazy" style="object-position: 50% 50%"><figcaption data-i="354">Cảng Marseille (Pháp), ảnh năm 1899</figcaption></figure></li>
         <li><div class="y">18/6/1919</div><div><h3 data-i="269">Gửi yêu sách tới Versailles</h3><p data-i="268">Ký tên Nguyễn Ái Quốc, Người gửi tới Hội nghị Versailles bản Yêu sách của nhân dân An Nam, đòi các quyền tự do và bình đẳng cơ bản. Bản yêu sách không được chấp nhận, nhưng cái tên Nguyễn Ái Quốc bắt đầu được biết đến.</p></div></li>
-        <li><div class="y">1920</div><div><h3 data-i="267">Gặp con đường mới</h3><p data-i="266">Tháng 7/1920, Người đọc luận cương của Lênin về vấn đề dân tộc và thuộc địa. Tháng 12/1920, tại Đại hội Tours, Người bỏ phiếu tán thành gia nhập Quốc tế Cộng sản và trở thành một trong những người sáng lập Đảng Cộng sản Pháp.</p></div></li>
-        <li><div class="y">1923 – 1925</div><div><h3 data-i="265">Học tập và đào tạo cán bộ</h3><p data-i="264">Năm 1923 Người sang Liên Xô; cuối năm 1924 đến Quảng Châu (Trung Quốc). Tháng 6/1925, Người lập Hội Việt Nam Cách mạng Thanh niên và huấn luyện những lớp cán bộ đầu tiên.</p></div></li>
+        <li class="has-img"><div class="y">1920</div><div><h3 data-i="267">Gặp con đường mới</h3><p data-i="266">Tháng 7/1920, Người đọc luận cương của Lênin về vấn đề dân tộc và thuộc địa. Tháng 12/1920, tại Đại hội Tours, Người bỏ phiếu tán thành gia nhập Quốc tế Cộng sản và trở thành một trong những người sáng lập Đảng Cộng sản Pháp.</p></div><figure class="jimg"><img src="images/tours1920.jpg" alt="Đại hội Tours, 1920" loading="lazy" style="object-position: 50% 40%"><figcaption data-i="353">Nguyễn Ái Quốc tại Đại hội Tours, tháng 12/1920</figcaption></figure></li>
+        <li class="has-img"><div class="y">1923 – 1925</div><div><h3 data-i="265">Học tập và đào tạo cán bộ</h3><p data-i="264">Năm 1923 Người sang Liên Xô; cuối năm 1924 đến Quảng Châu (Trung Quốc). Tháng 6/1925, Người lập Hội Việt Nam Cách mạng Thanh niên và huấn luyện những lớp cán bộ đầu tiên.</p></div><figure class="jimg"><img src="images/canton.jpg" alt="Sông Châu Giang, Quảng Châu" loading="lazy" style="object-position: 50% 50%"><figcaption data-i="352">Sông Châu Giang ở Quảng Châu đầu thế kỷ 20 (bưu ảnh)</figcaption></figure></li>
         <li><div class="y">1927</div><div><h3 data-i="263">Đường Kách mệnh</h3><p data-i="262">Tập hợp các bài giảng cho cán bộ thành một cuốn sách, trình bày cách tổ chức, tuyên truyền và vận động quần chúng.</p></div></li>
         <li><div class="y">3/2/1930</div><div><h3 data-i="261">Thống nhất các tổ chức cộng sản</h3><p data-i="260">Tại hội nghị ở Hương Cảng, các tổ chức cộng sản trong nước hợp nhất thành Đảng Cộng sản Việt Nam, đặt nền tảng tổ chức cho phong trào.</p></div></li>
         <li><div class="y">1931 – 1940</div><div><h3 data-i="259">Những năm gian khó</h3><p data-i="258">Người bị bắt ở Hồng Kông (1931) và sau đó tiếp tục hoạt động ở nước ngoài trong điều kiện bị theo dõi, lúc ở Liên Xô, lúc ở Trung Quốc.</p></div></li>
-        <li><div class="y">28/1/1941</div><div><h3 data-i="257">Trở về Tổ quốc</h3><p data-i="256">Sau khoảng ba mươi năm, Người về nước qua cột mốc biên giới ở Pác Bó (Cao Bằng). Tháng 5/1941, Mặt trận Việt Minh ra đời, tập hợp mọi tầng lớp yêu nước. Cũng trong năm này, Người viết diễn ca Lịch sử nước ta.</p></div></li>
-        <li><div class="y">1945</div><div><h3 data-i="255">Cách mạng Tháng Tám và Tuyên ngôn Độc lập</h3><p data-i="254">Sau khi Nhật đầu hàng, Tổng khởi nghĩa thành công. Ngày 2/9/1945 tại Ba Đình, Người đọc Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.</p></div></li>
+        <li class="has-img"><div class="y">28/1/1941</div><div><h3 data-i="257">Trở về Tổ quốc</h3><p data-i="256">Sau khoảng ba mươi năm, Người về nước qua cột mốc biên giới ở Pác Bó (Cao Bằng). Tháng 5/1941, Mặt trận Việt Minh ra đời, tập hợp mọi tầng lớp yêu nước. Cũng trong năm này, Người viết diễn ca Lịch sử nước ta.</p></div><figure class="jimg"><img src="images/pacbo.jpg" alt="Cốc Bó (Pác Bó), Cao Bằng" loading="lazy" style="object-position: 50% 50%"><figcaption data-i="351">Cốc Bó (Pác Bó), Cao Bằng</figcaption></figure></li>
+        <li class="has-img"><div class="y">1945</div><div><h3 data-i="255">Cách mạng Tháng Tám và Tuyên ngôn Độc lập</h3><p data-i="254">Sau khi Nhật đầu hàng, Tổng khởi nghĩa thành công. Ngày 2/9/1945 tại Ba Đình, Người đọc Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.</p></div><figure class="jimg"><img src="images/badinh1945.jpg" alt="Quảng trường Ba Đình, 2/9/1945" loading="lazy" style="object-position: 50% 30%"><figcaption data-i="350">Quảng trường Ba Đình, ngày 2/9/1945</figcaption></figure></li>
       </ol>
     </div>
   </section>
@@ -360,6 +408,8 @@
     </div>
     <p data-i="219" class="nameless reveal">Phía sau mỗi cột mốc là rất nhiều dân công, bộ đội, thanh niên xung phong, những người mẹ, người vợ ở hậu phương. Họ là phần lịch sử thường ít được ghi tên nhất.</p>
   </section>
+  <h3 data-i="349" class="grp reveal">Cột mốc qua hình ảnh <small>1954 · 1973 · 1975 · hôm nay</small></h3>
+  <section class="block" style="border-top:0;padding:0 0 70px"><div class="wrap"><div class="mosaic4"><figure class="reveal"><img src="images/hero.jpg" alt="Điện Biên Phủ, 1954" loading="lazy" style="object-position: 55% 40%"><figcaption data-i="250">Cờ trên hầm chỉ huy Điện Biên Phủ, 1954</figcaption></figure><figure class="reveal"><img src="images/paris.jpg" alt="Hiệp định Paris, 1973" loading="lazy" style="object-position: 50% 40%"><figcaption data-i="348">Lễ ký Hiệp định Paris, 1973</figcaption></figure><figure class="reveal"><img src="images/saigon.jpg" alt="Xe tăng 843, Dinh Độc Lập" loading="lazy" style="object-position: 50% 40%"><figcaption data-i="347">Xe tăng số 843 trưng bày tại Dinh Độc Lập (TP. Hồ Chí Minh)</figcaption></figure><figure class="reveal"><img src="images/lang.jpg" alt="Quảng trường Ba Đình ngày nay" loading="lazy" style="object-position: 50% 45%"><figcaption data-i="346">Quảng trường Ba Đình và Lăng Chủ tịch Hồ Chí Minh ngày nay</figcaption></figure></div></div></section>
   <div class="sec-head wrap reveal" id="anh-hung">
     <div data-i="336" class="kicker">04 — Anh hùng, liệt sĩ</div>
     <h2 data-i="335">Những người <em>đã ngã xuống</em> để dân tộc đi tiếp</h2>
@@ -368,25 +418,25 @@
   <h3 data-i="333" class="grp reveal">Chống xâm lược thời đầu <small>cuối thế kỷ 19 – đầu thế kỷ 20</small></h3>
   <section class="deep" style="padding:0 0 10px">
     <div class="grid">
-      <article class="an peach reveal">
+      <article class="an peach reveal"><div class="pic wm" aria-hidden="true"><span>1837</span></div>
         <div class="tag">1837 – 1868</div>
         <h3 data-i="332">Nguyễn Trung Trực</h3>
         <p data-i="331">Người lãnh đạo nghĩa quân ở Nam Kỳ. Ngày 10/12/1861, ông chỉ huy đốt cháy tàu chiến Espérance của Pháp trên sông Vàm Cỏ. Bị bắt năm 1868, ông bị xử tử ở Rạch Giá.</p>
         <div data-i="330" class="key"><b>Điều đọng lại</b>Sự dũng cảm và mưu trí của nghĩa quân Nam Kỳ làm quân Pháp phải dè chừng.</div>
       </article>
-      <article class="an olive reveal">
+      <article class="an olive reveal"><div class="pic wm" aria-hidden="true"><span>1800</span></div>
         <div class="tag">1800 – 1873</div>
         <h3 data-i="329">Nguyễn Tri Phương</h3>
         <p data-i="328">Danh tướng triều Nguyễn, chỉ huy bảo vệ thành Hà Nội khi Francis Garnier tấn công năm 1873. Bị thương và bị bắt, ông từ chối ăn uống và mất ngày 20/12/1873.</p>
         <div data-i="327" class="key"><b>Điều đọng lại</b>Một vị tướng cao tuổi chọn giữ khí tiết đến cùng.</div>
       </article>
-      <article class="an taupe reveal">
+      <article class="an taupe reveal"><div class="pic"><img src="images/phandinhphung.jpg" alt="Phan Đình Phùng" loading="lazy" style="object-position: 50% 15%"></div>
         <div class="tag">1847 – 1895</div>
         <h3 data-i="326">Phan Đình Phùng</h3>
         <p data-i="325">Lãnh đạo khởi nghĩa Hương Khê (Hà Tĩnh), cuộc khởi nghĩa tiêu biểu của phong trào Cần Vương, kéo dài hơn mười năm. Ông mất vì bệnh năm 1895; nghĩa quân tan rã sau đó.</p>
         <div data-i="324" class="key"><b>Điều đọng lại</b>Bền bỉ chiến đấu dù lực lượng và vũ khí thua kém.</div>
       </article>
-      <article class="an brown reveal">
+      <article class="an brown reveal"><div class="pic"><img src="images/detham.jpg" alt="Hoàng Hoa Thám" loading="lazy" style="object-position: 50% 12%"></div>
         <div data-i="323" class="tag">khoảng 1858 – 1913</div>
         <h3 data-i="322">Hoàng Hoa Thám</h3>
         <p data-i="321">Thủ lĩnh khởi nghĩa Yên Thế (Bắc Giang), kéo dài từ 1884 đến 1913 với lối đánh du kích dựa vào địa hình. Ông bị ám sát năm 1913.</p>
@@ -397,37 +447,37 @@
   <h3 data-i="319" class="grp reveal">Cách mạng và kháng chiến chống Pháp <small>1930 – 1954</small></h3>
   <section class="deep" style="padding:0 0 10px">
     <div class="grid">
-      <article class="an peach reveal">
+      <article class="an peach reveal"><div class="pic"><img src="images/nguyenthaihoc.jpg" alt="Nguyễn Thái Học" loading="lazy" style="object-position: 50% 18%"></div>
         <div class="tag">1902 – 1930</div>
         <h3 data-i="318">Nguyễn Thái Học</h3>
         <p data-i="317">Lãnh tụ Việt Nam Quốc dân Đảng, lãnh đạo khởi nghĩa Yên Bái tháng 2/1930. Khởi nghĩa thất bại; ngày 17/6/1930, ông cùng nhiều đồng chí bị xử tử. Dù thất bại, cuộc khởi nghĩa để lại dấu ấn mạnh về ý chí giành độc lập.</p>
         <div data-i="316" class="key"><b>Điều đọng lại</b>Thất bại về quân sự nhưng không mất đi ý nghĩa tinh thần.</div>
       </article>
-      <article class="an olive reveal">
+      <article class="an olive reveal"><div class="pic"><img src="images/tranphu.jpg" alt="Trần Phú" loading="lazy" style="object-position: 50% 22%"></div>
         <div class="tag">1904 – 1931</div>
         <h3 data-i="315">Trần Phú</h3>
         <p data-i="314">Tổng Bí thư đầu tiên của Đảng Cộng sản Việt Nam (tháng 10/1930), khi mới 26 tuổi. Bị bắt năm 1931, ông mất ngày 6/9/1931 trong bệnh viện ở Sài Gòn, ở tuổi 27.</p>
         <div data-i="313" class="key"><b>Điều đọng lại</b>Gánh một trách nhiệm lớn ở tuổi rất trẻ.</div>
       </article>
-      <article class="an taupe reveal">
+      <article class="an taupe reveal"><div class="pic wm" aria-hidden="true"><span>1910</span></div>
         <div class="tag">1910 – 1941</div>
         <h3 data-i="312">Nguyễn Thị Minh Khai</h3>
         <p data-i="311">Nữ chiến sĩ cách mạng, hoạt động từ khi còn trẻ ở Nghệ An, Hải Phòng và Sài Gòn. Bị bắt và xử tử tháng 8/1941 ở Hóc Môn.</p>
         <div data-i="310" class="key"><b>Điều đọng lại</b>Một trong những phụ nữ tiêu biểu của phong trào cách mạng.</div>
       </article>
-      <article class="an brown reveal">
+      <article class="an brown reveal"><div class="pic"><img src="images/kimdong.jpg" alt="Kim Đồng (Nông Văn Dền)" loading="lazy" style="object-position: 50% 22%"></div>
         <div class="tag">1929 – 1943</div>
         <h3 data-i="309">Kim Đồng (Nông Văn Dền)</h3>
         <p data-i="308">Cậu bé người Nùng làm liên lạc cho cán bộ cách mạng ở Cao Bằng. Ngày 15/2/1943, khi đang làm nhiệm vụ, em hy sinh ở tuổi 14.</p>
         <div data-i="307" class="key"><b>Điều đọng lại</b>Hình ảnh người thiếu niên dũng cảm; tên em được đặt cho nhiều tổ chức thiếu nhi.</div>
       </article>
-      <article class="an peach reveal">
+      <article class="an peach reveal"><div class="pic"><img src="images/condao.jpg" alt="Võ Thị Sáu" loading="lazy" style="object-position: 50% 50%"></div>
         <div class="tag">1933 – 1952</div>
         <h3 data-i="306">Võ Thị Sáu</h3>
         <p data-i="305">Tham gia hoạt động từ rất sớm ở Bà Rịa, bị Pháp bắt và đưa ra Côn Đảo. Ngày 23/1/1952, chị bị xử bắn ở tuổi 19, và được truy tặng danh hiệu Anh hùng Lực lượng vũ trang nhân dân năm 1993.</p>
         <div data-i="304" class="key"><b>Điều đọng lại</b>Mộ chị ở nghĩa trang Hàng Dương, Côn Đảo, là nơi nhiều người đến thắp hương.</div>
       </article>
-      <article class="an olive reveal">
+      <article class="an olive reveal"><div class="pic wm" aria-hidden="true"><span>1922</span></div>
         <div class="tag">1922 – 1954</div>
         <h3 data-i="303">Phan Đình Giót</h3>
         <p data-i="302">Chiến sĩ trong chiến dịch Điện Biên Phủ. Ngày 13/3/1954, ở đồi Him Lam, anh lấy thân mình lấp lỗ châu mai của lô cốt địch để đồng đội xung phong; anh hy sinh và được truy tặng danh hiệu Anh hùng năm 1955.</p>
@@ -438,19 +488,19 @@
   <h3 data-i="300" class="grp reveal">Kháng chiến chống Mỹ <small>1954 – 1975</small></h3>
   <section class="deep" style="padding:0 0 10px">
     <div class="grid">
-      <article class="an taupe reveal">
+      <article class="an taupe reveal"><div class="pic"><img src="images/nguyenvantroi.jpg" alt="Nguyễn Văn Trỗi" loading="lazy" style="object-position: 50% 25%"></div>
         <div class="tag">1940 – 1964</div>
         <h3 data-i="299">Nguyễn Văn Trỗi</h3>
         <p data-i="298">Người thợ điện ở Sài Gòn, tham gia kế hoạch đặt mìn ở cầu Công Lý vào tháng 5/1964 nhằm vào Bộ trưởng Quốc phòng Mỹ Robert McNamara khi ông đến thăm. Kế hoạch bị lộ, anh bị bắt và bị xử bắn ngày 15/10/1964.</p>
         <div data-i="297" class="key"><b>Điều đọng lại</b>Tên anh được đặt cho nhiều đường phố và trường học.</div>
       </article>
-      <article class="an brown reveal">
+      <article class="an brown reveal"><div class="pic"><img src="images/dongloc.jpg" alt="Mười cô gái Đồng Lộc" loading="lazy" style="object-position: 50% 50%"></div>
         <div class="tag">24/7/1968</div>
         <h3 data-i="296">Mười cô gái Đồng Lộc</h3>
         <p data-i="295">Mười nữ thanh niên xung phong giữ cho con đường qua ngã ba Đồng Lộc (Hà Tĩnh) thông suốt, nơi bị ném bom ác liệt. Ngày 24/7/1968, một trận bom đã cướp đi cả mười người khi họ đang làm nhiệm vụ.</p>
         <div data-i="294" class="key"><b>Điều đọng lại</b>Những người trẻ giữ đường cho các chuyến hàng ra tiền tuyến.</div>
       </article>
-      <article class="an olive wide reveal">
+      <article class="an olive wide reveal"><div class="pic"><img src="images/thanhco.jpg" alt="Thành cổ Quảng Trị, 81 ngày đêm" loading="lazy" style="object-position: 50% 50%"></div>
         <div class="tag">28/6 – 16/9/1972</div>
         <h3 data-i="293">Thành cổ Quảng Trị, 81 ngày đêm</h3>
         <p data-i="292">Trong 81 ngày đêm, bộ đội và dân công giữ Thành cổ Quảng Trị dưới mưa bom, đạn pháo. Nhiều chiến sĩ còn rất trẻ khi hy sinh.</p>
@@ -462,6 +512,9 @@
     <p data-i="290" class="nameless reveal">Theo số liệu thường được công bố, các cuộc kháng chiến để lại hơn 1,1 triệu liệt sĩ, cùng rất nhiều người bị thương hoặc mất tích. Ngày 27/7 hằng năm là Ngày Thương binh – Liệt sĩ. Mỗi cái tên ở đây đại diện cho rất nhiều người không có tên.</p>
   </section>
 
+  <section class="band reveal" style="background-image:url(images/hero.jpg)">
+    <div class="in"><q data-i="345">“Không có gì quý hơn độc lập, tự do.”</q><cite data-i="344">Hồ Chí Minh, 17/7/1966</cite></div>
+  </section>
   <div class="sec-head wrap reveal" id="bai-hoc">
     <div data-i="218" class="kicker">05 — Bài học</div>
     <h2 data-i="217">Sáu bài học cho <em>thế hệ sau</em></h2>
@@ -521,6 +574,8 @@
       </div>
     </div>
   </section>
+  <h3 data-i="343" class="grp reveal">Đến tận nơi qua hình ảnh <small>bốn địa điểm để bắt đầu</small></h3>
+  <section class="block" style="border-top:0;padding:0 0 60px"><div class="wrap"><div class="mosaic4"><figure class="reveal"><img src="images/nharong.jpg" alt="Bến Nhà Rồng" loading="lazy" style="object-position: 50% 55%"><figcaption data-i="342">Bến Nhà Rồng, TP. Hồ Chí Minh</figcaption></figure><figure class="reveal"><img src="images/pacbo.jpg" alt="Pác Bó" loading="lazy" style="object-position: 50% 50%"><figcaption data-i="341">Pác Bó, Cao Bằng</figcaption></figure><figure class="reveal"><img src="images/lang.jpg" alt="Ba Đình" loading="lazy" style="object-position: 45% 45%"><figcaption data-i="340">Quảng trường Ba Đình, Hà Nội</figcaption></figure><figure class="reveal"><img src="images/thanhco.jpg" alt="Thành cổ Quảng Trị" loading="lazy" style="object-position: 50% 50%"><figcaption data-i="339">Thành cổ Quảng Trị</figcaption></figure></div></div></section>
   <section class="deep" style="padding-top:0">
     <p data-i="182" class="note reveal" style="margin-top:0">Lưu ý: nội dung tổng hợp từ kiến thức lịch sử phổ thông. Một số chi tiết tiểu sử, đặc biệt các năm 1911–1917, còn được các nhà sử học thảo luận và nên được đối chiếu với tài liệu của bảo tàng, viện sử học và các công trình nghiên cứu chính thống.</p>
   </section>
@@ -546,6 +601,8 @@
         <li data-i="54">Tượng và đền thờ Trần Hưng Đạo: Wikimedia Commons, CC0.</li>
         <li data-i="55">Cổng Văn Miếu, Hà Nội: Wikimedia Commons, CC BY 4.0.</li>
         <li data-i="181">Chân dung Nguyễn Ái Quốc (1922) và Hồ Chí Minh (1946): Wikimedia Commons, phạm vi công cộng. Bến Nhà Rồng: Wikimedia Commons, CC0.</li>
+        <li data-i="338">Phạm vi công cộng (Wikimedia Commons): trường Quốc Học Huế, cảng Marseille 1899, bưu ảnh Quảng Châu, Đề Thám (bưu ảnh Dieulefils), Nguyễn Thái Học, Trần Phú, phù điêu Kim Đồng.</li>
+        <li data-i="337">Creative Commons (Wikimedia Commons): Côn Đảo và Cốc Bó — [Tycho] (CC BY-SA 3.0); tượng Phan Đình Phùng — Amore Mio (CC BY-SA 3.0); tượng Nguyễn Văn Trỗi — Michal Maňas (CC BY 4.0); đài tưởng niệm Đồng Lộc — Newone (CC BY-SA 3.0); Thành cổ Quảng Trị — Bùi Thụy Đào Nguyên (CC BY-SA 4.0); Quảng trường Ba Đình — Vyacheslav Argenberg (CC BY 4.0).</li>
       </ul>
     </div>
   </div>
