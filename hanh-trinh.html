@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<script>if(/(^|\/)(index)?\.html$|\.html$/.test(location.pathname)&&history.replaceState){history.replaceState(null,"",location.pathname.replace(/index\.html$/,"").replace(/\.html$/,"")+location.search+location.hash);}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hành trình — Lịch sử Việt Nam</title>
+<meta name="description" content="Hoàn cảnh, hành trình ra đi tìm đường cứu nước, những người cùng dân tộc qua các cột mốc kháng chiến và bài học cho thế hệ sau.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LW1F28HH2S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LW1F28HH2S');
+</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0b0b0b;
+    --ink: #1a1410;
+    --peach: #f2d7ad;
+    --cream: #f4e8d2;
+    --gold: #c09452;
+    --maroon: #8a3126;
+    --line: rgba(244,232,210,.2);
+    --display: "Playfair Display", Georgia, serif;
+    --serif: "Cormorant Garamond", Georgia, serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body { background: var(--black); color: var(--cream); font-family: var(--serif); font-size: 18px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  body::after {
+    content: ""; position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: .06;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- nav ---------- */
+  header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transition: background .3s; }
+  header.solid { background: rgba(11,11,11,.92);  border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+  .brand { font: 700 18px var(--display); letter-spacing: .14em; white-space: nowrap; }
+  nav { display: flex; gap: 26px; font-size: 13px; letter-spacing: .22em; text-transform: uppercase; }
+  nav a { opacity: .8; transition: opacity .2s, color .2s; }
+  nav a:hover { opacity: 1; color: var(--peach); }
+
+  .lang { margin-left: 18px; background: transparent; color: var(--peach); border: 1px solid var(--peach); padding: 6px 12px; font: 600 12px var(--serif); letter-spacing: .2em; cursor: pointer; transition: background .25s, color .25s; }
+  .lang:hover { background: var(--peach); color: var(--ink); }
+
+  /* ---------- hero ---------- */
+  .hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; justify-content: center; overflow: hidden; text-align: center; }
+  .strips { position: absolute; inset: -4% 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; will-change: transform; }
+  .strips div { overflow: hidden; }
+  .strips img { filter: sepia(.35) saturate(1.2) contrast(1.05) brightness(1); transform: scale(1.12); }
+  .hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: radial-gradient(ellipse at center, rgba(11,11,11,.35), rgba(11,11,11,.82) 88%), linear-gradient(180deg, rgba(11,11,11,.6), transparent 30%, transparent 65%, var(--black)); }
+  .hero .in { position: relative; z-index: 2; padding: 0 20px; }
+  .kicker { font-size: 15px; letter-spacing: .5em; text-transform: uppercase; color: var(--peach); margin-bottom: 14px; padding-left: .5em; }
+  .title { font: 400 clamp(64px, 15.5vw, 230px)/.92 var(--display); letter-spacing: .02em; text-transform: uppercase; color: var(--peach); text-shadow: 0 6px 60px rgba(0,0,0,.6); }
+  .sub { margin-top: 22px; font: italic 400 clamp(19px, 2.2vw, 28px) var(--serif); color: var(--cream); }
+  .cta { display: inline-block; margin-top: 34px; padding: 13px 34px; border: 1px solid var(--peach); font-size: 13px; letter-spacing: .3em; text-transform: uppercase; color: var(--peach); transition: background .3s, color .3s; }
+  .cta:hover { background: var(--peach); color: var(--ink); }
+  .scroll { position: absolute; z-index: 2; bottom: 24px; left: 50%; transform: translateX(-50%); font-size: 11px; letter-spacing: .4em; text-transform: uppercase; color: var(--peach); opacity: .7; }
+
+  /* ---------- intro ---------- */
+  .intro { padding: 120px 0 80px; text-align: center; }
+  .intro h2 { font: 400 clamp(32px, 4.4vw, 58px)/1.15 var(--display); max-width: 900px; margin: 0 auto; }
+  .intro h2 em { color: var(--peach); }
+  .intro p { max-width: 600px; margin: 26px auto 0; font-size: 20px; color: rgba(244,232,210,.78); }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 70px; border-top: 1px solid var(--line); padding-top: 34px; }
+  .stats b { display: block; font: 400 clamp(36px, 4.6vw, 60px)/1 var(--display); color: var(--peach); }
+  .stats span { font-size: 14px; letter-spacing: .18em; text-transform: uppercase; opacity: .7; }
+
+  /* ---------- section heading ---------- */
+  .sec-head { text-align: center; padding: 100px 28px 56px; }
+  @media (max-width: 640px) { .sec-head { padding-left: 18px; padding-right: 18px; } }
+  .sec-head .kicker { margin-bottom: 10px; }
+  .sec-head h2 { font: 400 clamp(34px, 4.6vw, 60px)/1.1 var(--display); }
+  .sec-head h2 em { color: var(--peach); }
+
+  /* ---------- brochure spreads (thời kỳ) ---------- */
+  :root { --brown: #4a2b23; --olive: #36331f; --taupe: #a79d88; --paper: #efd2b0; }
+  .spread { max-width: 1120px; margin: 0 auto 64px; display: grid; box-shadow: 0 30px 80px rgba(0,0,0,.6); background: var(--olive); }
+  .spread.a { grid-template-columns: 1fr 1.12fr .95fr; }
+  .spread.b { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(400px, auto)); }
+  .spread.b .col { display: contents; }
+  .spread.b .col:nth-child(1) > * { grid-column: 1; }
+  .spread.b .col:nth-child(2) > * { grid-column: 2; }
+  .spread.b .col:nth-child(3) > * { grid-column: 3; }
+  .spread.b .col > :first-child { grid-row: 1; }
+  .spread.b .col > :last-child { grid-row: 2; }
+  .spread.b .c.img { min-height: 400px; }
+  .spread.b .c.img img { position: absolute; inset: 0; }
+  .spread.b .c.tx { overflow-wrap: anywhere; }
+  .c { position: relative; overflow: hidden; }
+  .c.img img { transition: transform 1.4s ease; }
+  .c.img:hover img { transform: scale(1.05); }
+  .c.img figcaption { position: absolute; left: 12px; bottom: 10px; right: 12px; font: italic 400 13px var(--serif); color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.9); }
+  .c.tx { padding: 34px 30px 36px; display: flex; flex-direction: column; }
+  .c.peach { background: var(--paper); color: #2b1a12; }
+  .c.olive { background: var(--olive); color: var(--cream); }
+  .c.brown { background: var(--brown); color: var(--paper); }
+  .c.taupe { background: var(--taupe); color: #2a2218; }
+  .c h3 { font: 500 clamp(26px, 2.6vw, 38px)/.98 var(--display); text-transform: uppercase; letter-spacing: .03em; margin-bottom: 6px; }
+  .c h3 small { display: block; font-size: .6em; letter-spacing: .06em; margin-top: 4px; }
+  .c .yr { font: italic 500 15px var(--display); opacity: .8; margin-bottom: 16px; }
+  .c p { font-size: 16.5px; line-height: 1.45; text-align: justify; hyphens: auto; }
+  .c ul { list-style: none; margin-top: 16px; }
+  .c li { display: grid; grid-template-columns: 62px 1fr; gap: 8px; padding: 6px 0; border-top: 1px solid rgba(128,110,90,.45); font-size: 15.5px; line-height: 1.35; }
+  .c li b { font: italic 500 15.5px var(--display); }
+  .big-title { font: 500 clamp(40px, 5vw, 66px)/.95 var(--display); text-transform: uppercase; letter-spacing: .03em; }
+  .big-title small { display: block; font-size: .32em; letter-spacing: .12em; margin-top: 14px; }
+  .vert { position: absolute; z-index: 2; left: 14px; top: 14px; writing-mode: vertical-rl; transform: rotate(180deg); font: 500 clamp(28px, 3vw, 42px)/1 var(--display); text-transform: uppercase; letter-spacing: .05em; color: var(--paper); text-shadow: 0 2px 14px rgba(0,0,0,.6); }
+  .shade::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(40,22,16,.65), transparent 55%); }
+  .col { display: flex; flex-direction: column; min-height: 660px; }
+  .col > .c { flex: 1 1 auto; }
+  .col > .c.img { flex: 1 1 46%; min-height: 280px; }
+  .col > .c.tx { flex: 1 1 54%; }
+  .a .r1 { min-height: 300px; }
+
+  /* ---------- timeline (ribbon) ---------- */
+  .tl-sec { background: #efe9d8; color: #20321f; padding: 90px 0 110px; position: relative; overflow: hidden; }
+  .tl-sec::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 10%, rgba(140,160,120,.22), transparent 55%), radial-gradient(ellipse at 90% 70%, rgba(190,160,110,.2), transparent 55%); pointer-events: none; }
+  .tl { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: 1.55fr 1fr; gap: 10px; }
+  .tl-art { position: relative; }
+  .tl-art svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .tl-title { position: absolute; left: 0; top: 0; z-index: 2; font: 500 clamp(34px, 4.8vw, 62px)/1.02 var(--display); color: #0f4a2b; letter-spacing: -.01em; }
+  .tl-brand { position: absolute; right: 28px; top: -52px; font: 800 28px var(--display); color: #0f4a2b; }
+  .tl-text { position: relative; }
+  .tl-b { position: absolute; left: 0; right: 0; transform: translateY(-50%); }
+  .tl-b h4 { font: 500 clamp(22px, 2.2vw, 30px)/1.05 var(--display); color: #1b2b1a; }
+  .tl-b .meta { font-size: 17px; color: #4a5a46; margin-top: 3px; }
+  .tl-b .rule { display: block; width: 52px; height: 2px; background: #0f4a2b; margin: 10px 0 12px; }
+  .tl-b li { list-style: none; display: grid; grid-template-columns: 56px 1fr; gap: 8px; font-size: 16px; line-height: 1.32; padding: 3px 0; color: #2c3a2a; }
+  .tl-b li b { font: italic 600 15px var(--display); color: #0f4a2b; padding-top: 1px; }
+  .tl-b .mimg { display: none; }
+  .rib-txt { font: italic 400 30px var(--serif); fill: #6e7d68; letter-spacing: .02em; }
+
+
+  /* ---------- phân tích sâu ---------- */
+  .deep { padding: 20px 0 100px; }
+  .deep .grid { max-width: 1120px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .an { padding: 40px 36px 42px; position: relative; }
+  .an.peach { background: var(--paper); color: #2b1a12; }
+  .an.olive { background: var(--olive); color: var(--cream); }
+  .an.brown { background: var(--brown); color: var(--paper); }
+  .an.taupe { background: var(--taupe); color: #2a2218; }
+  .an .tag { font: italic 500 15px var(--display); opacity: .75; margin-bottom: 10px; }
+  .an h3 { font: 500 clamp(24px, 2.4vw, 32px)/1.08 var(--display); margin-bottom: 18px; }
+  .an p { font-size: 17.5px; line-height: 1.5; }
+  .an p + p { margin-top: 12px; }
+  .an .key { margin-top: 20px; padding-top: 14px; border-top: 1px solid currentColor; border-top-color: rgba(128,110,90,.5); font: italic 500 17px/1.4 var(--display); }
+  .an .key b { font: 600 11px var(--serif); letter-spacing: .24em; text-transform: uppercase; display: block; margin-bottom: 4px; opacity: .7; font-style: normal; }
+  .an.wide { grid-column: span 2; }
+  .cmp { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 16px; }
+  .cmp th, .cmp td { text-align: left; vertical-align: top; padding: 11px 12px 11px 0; border-top: 1px solid rgba(244,232,210,.28); line-height: 1.35; }
+  .cmp th { font: 600 12px var(--serif); letter-spacing: .2em; text-transform: uppercase; opacity: .7; border-top: 0; }
+  .cmp td:first-child { font: 500 17px var(--display); color: var(--peach); white-space: nowrap; padding-right: 20px; }
+  .note { max-width: 1120px; margin: 6px auto 0; padding: 22px 36px; font-size: 15.5px; color: rgba(244,232,210,.7); font-style: italic; border: 1px solid var(--line); }
+
+  /* ---------- closing ---------- */
+  .closing { position: relative; padding: 140px 0; text-align: center; overflow: hidden; border-top: 1px solid var(--line); }
+  .closing .bg { position: absolute; inset: 0; opacity: .22; }
+  .closing .bg img { filter: sepia(.5) grayscale(.4); }
+  .closing .in { position: relative; }
+  .quote { font: italic 400 clamp(26px, 3.4vw, 44px)/1.35 var(--display); max-width: 820px; margin: 0 auto; color: var(--cream); }
+  .quote small { display: block; margin-top: 22px; font: 400 14px var(--serif); letter-spacing: .3em; text-transform: uppercase; color: var(--peach); }
+
+  footer { padding: 54px 0 40px; border-top: 1px solid var(--line); font-size: 14px; color: rgba(244,232,210,.65); }
+  footer .row { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  footer b { color: var(--peach); font-weight: 500; letter-spacing: .2em; text-transform: uppercase; font-size: 12px; display: block; margin-bottom: 10px; }
+  footer ul { list-style: none; line-height: 1.8; max-width: 640px; }
+  footer a:hover { color: var(--peach); }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
+  .reveal.on { opacity: 1; transform: none; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    nav { display: none; }
+    .spread.a, .spread.b { grid-template-columns: 1fr; grid-template-rows: none; }
+    .spread.b .col > * { grid-column: auto !important; grid-row: auto !important; }
+    .spread.b .c.img { min-height: 280px; }
+    .spread.a .c.img { min-height: 260px; }
+    .col { min-height: 0; }
+    .deep .grid { grid-template-columns: 1fr; padding: 0 12px; }
+    .an.wide { grid-column: auto; }
+    .an { padding: 32px 22px; }
+    .cmp { display: block; overflow-x: auto; }
+    .tl { grid-template-columns: 1fr; }
+    .tl-art svg { display: none; }
+    .tl-title { position: static; margin-bottom: 36px; }
+    .tl-brand { display: none; }
+    .tl-text { display: grid; gap: 40px; }
+    .tl-b { position: static; transform: none; }
+    .tl-b .mimg { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 50% / 44%; overflow: hidden; margin-bottom: 18px; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .strips { grid-template-columns: repeat(3, 1fr); }
+    .strips div:nth-child(n+4) { display: none; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding: 0 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+  /* ---------- sub pages ---------- */
+  .ph { padding: 150px 0 72px; text-align: center; border-bottom: 1px solid var(--line); }
+  .ph .kicker { margin-bottom: 12px; }
+  .ph h1 { font: 400 clamp(54px, 11vw, 150px)/.95 var(--display); text-transform: uppercase; color: var(--peach); letter-spacing: .02em; }
+  .ph p { max-width: 600px; margin: 22px auto 0; font: italic 400 clamp(19px, 2vw, 24px)/1.4 var(--serif); color: rgba(244,232,210,.85); }
+  nav a.on { color: var(--peach); opacity: 1; border-bottom: 1px solid var(--peach); }
+  .jump { padding: 90px 0; text-align: center; border-top: 1px solid var(--line); }
+  .jump h2 { font: 400 clamp(28px, 3.6vw, 44px)/1.15 var(--display); margin-bottom: 8px; }
+  .jump h2 em { color: var(--peach); }
+  .jump p { color: rgba(244,232,210,.7); margin-bottom: 8px; }
+  .jump .cta { margin: 26px 8px 0; }
+  .jump .cta.solid { background: var(--peach); color: var(--ink); }
+
+  /* ---------- hanh trinh ---------- */
+  .jr { list-style: none; margin: 56px 0 0; border-left: 1px solid var(--line); }
+  .jr li { position: relative; display: grid; grid-template-columns: 170px 1fr; gap: 28px; padding: 0 0 40px 36px; }
+  .jr li::before { content: ""; position: absolute; left: -6px; top: 10px; width: 11px; height: 11px; border-radius: 50%; background: var(--ochre); box-shadow: 0 0 0 4px var(--black); }
+  .jr .y { font: italic 500 21px/1.2 var(--display); color: var(--ochre); }
+  .jr h3 { font: 500 clamp(20px, 2vw, 26px)/1.2 var(--display); margin-bottom: 8px; }
+  .jr p { font-size: 17px; line-height: 1.5; color: var(--muted); max-width: 640px; }
+  .feature { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; margin: 0 0 64px; }
+  .feature h3 { font: 500 clamp(26px, 3vw, 38px)/1.12 var(--display); margin-bottom: 16px; }
+  .feature p { font-size: 17.5px; line-height: 1.55; color: var(--muted); }
+  .feature p + p { margin-top: 12px; }
+  .feature .key { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--line); font: italic 500 18px/1.4 var(--display); color: var(--cream); }
+  .feature .key b { display: block; font: 600 11px var(--serif); letter-spacing: .24em; text-transform: uppercase; color: var(--ochre); margin-bottom: 4px; font-style: normal; }
+  .nameless { max-width: 1120px; margin: 6px auto 0; padding: 26px 36px; font: italic 400 19px/1.5 var(--display); color: var(--cream); border: 1px solid var(--line); }
+  .cmp td:nth-child(2) { color: var(--cream); font-weight: 500; }
+  .deep .grid > .an { min-width: 0; }
+  .cmp td:first-child { white-space: normal; padding-right: 16px; }
+  @media (max-width: 640px) {
+    .cmp, .cmp tbody, .cmp tr, .cmp td { display: block; width: 100%; }
+    .cmp thead { display: none; }
+    .cmp tr { padding: 14px 0; border-top: 1px solid rgba(244,232,210,.28); }
+    .cmp td { border: 0; padding: 3px 0; }
+    .cmp td:first-child { font-size: 18px; }
+    .nameless { padding: 20px; font-size: 17px; }
+  }
+  @media (max-width: 900px) { .feature { grid-template-columns: 1fr; gap: 32px; } .jr li { grid-template-columns: 1fr; gap: 6px; } }
+</style>
+</head>
+<body>
+<header class="solid">
+  <div class="wrap">
+    <a data-i="0" href="./" class="brand">SỬ KÝ STUDIO</a>
+    <nav>
+      <a data-i="56" href="./">Trang chủ</a>
+      <a data-i="1" href="thoi-ky">Thời kỳ</a>
+      <a data-i="2" href="dong-thoi-gian">Dòng thời gian</a>
+      <a data-i="180" href="hanh-trinh" class=on>Hành trình</a>
+    </nav>
+    <button class="lang" id="lang" type="button" aria-label="Switch language">EN</button>
+  </div>
+</header>
+<main>
+  <section class="ph">
+    <div class="wrap">
+      <div data-i="180" class="kicker">Hành trình</div>
+      <h1 data-i="289">Đường cứu nước</h1>
+      <p data-i="288">Từ người thanh niên 21 tuổi rời bến Nhà Rồng đến những con người cùng dân tộc đi qua các cột mốc kháng chiến: hoàn cảnh, hành trình, bài học và cách truyền lại cho thế hệ sau.</p>
+    </div>
+  </section>
+  <div class="sec-head wrap reveal" id="hoan-canh">
+    <div data-i="287" class="kicker">01 — Hoàn cảnh</div>
+    <h2 data-i="286">Một thanh niên <em>21 tuổi</em> và một đất nước mất độc lập</h2>
+    <p data-i="285" class="lead" style="margin-left:auto;margin-right:auto">Để hiểu vì sao Người ra đi, cần nhìn cả hoàn cảnh gia đình, thời đại và những con đường đã được thử trước đó.</p>
+  </div>
+  <section class="block" style="border-top:0;padding-top:20px">
+    <div class="wrap">
+      <div class="split" style="margin-top:0">
+        <figure class="plate tall reveal" style="max-width:420px;justify-self:center">
+          <div class="ph"><img src="images/hcm1922.jpg" alt="Chân dung Nguyễn Ái Quốc, 1922" loading="lazy" style="object-position: 50% 25%"></div>
+          <figcaption data-i="284">Chân dung Nguyễn Ái Quốc, Paris, 1922</figcaption>
+        </figure>
+        <ol class="causes reveal">
+          <li><div><h3 data-i="283">Quê hương và gia đình</h3><p data-i="282">Nguyễn Tất Thành sinh ngày 19/5/1890 ở Nghệ An. Cha là Nguyễn Sinh Sắc, đỗ Phó bảng năm 1901 và từng làm quan; gia đình sống giữa những năm người dân chịu thuế nặng, phu dịch và mất đất. Những điều chứng kiến thuở nhỏ, cùng thời gian học ở Huế và dạy học ở Phan Thiết, hình thành mối quan tâm sâu sắc đến vận mệnh dân tộc.</p></div></li>
+          <li><div><h3 data-i="281">Những con đường đã thử</h3><p data-i="280">Cần Vương, Đông Du, Duy Tân đều cho thấy lòng yêu nước mạnh mẽ nhưng chưa đem lại độc lập. Người kính trọng các bậc tiền bối, song nhận thấy cần tìm một con đường khác, dựa trên hiểu biết về thế giới.</p></div></li>
+          <li><div><h3 data-i="279">Quyết định ra đi</h3><p data-i="278">Năm 1911, chàng trai 21 tuổi quyết định ra nước ngoài, muốn xem người ta làm thế nào rồi trở về giúp đồng bào. Đó là lựa chọn mạo hiểm: không có sự hậu thuẫn của tổ chức nào, phải tự kiếm sống bằng sức lao động.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <div class="sec-head wrap reveal" id="hanh-trinh">
+    <div data-i="277" class="kicker">02 — Hành trình</div>
+    <h2 data-i="276">Ba mươi năm <em>từ Nhà Rồng đến Pác Bó</em></h2>
+    <p data-i="275" class="lead" style="margin-left:auto;margin-right:auto">Những chặng chính từ 1911 đến 1945. Một số chi tiết về đời sống trong những năm đầu còn được các nhà sử học thảo luận.</p>
+  </div>
+  <section class="block" style="border-top:0;padding-top:0">
+    <div class="wrap">
+      <figure class="plate reveal" style="max-width:760px;margin:0 auto">
+        <div class="ph"><img src="images/nharong.jpg" alt="Bến Nhà Rồng, Thành phố Hồ Chí Minh" loading="lazy" style="object-position: 50% 55%"></div>
+        <figcaption data-i="274">Bến Nhà Rồng, Thành phố Hồ Chí Minh, nơi ngày 5/6/1911 Nguyễn Tất Thành xuống tàu</figcaption>
+      </figure>
+      <ol class="jr reveal">
+        <li><div class="y">5/6/1911</div><div><h3 data-i="273">Rời bến Nhà Rồng</h3><p data-i="272">Lên tàu Amiral Latouche-Tréville với tên Văn Ba, làm phụ bếp để có tiền đi. Tháng 7/1911 tàu đến Marseille (Pháp).</p></div></li>
+        <li><div class="y">1911 – 1917</div><div><h3 data-i="271">Đi để hiểu</h3><p data-i="270">Theo các tiểu sử phổ biến, Người đi qua nhiều cảng ở châu Phi, châu Mỹ và châu Âu, sống một thời gian ở Anh, làm nhiều nghề để kiếm sống và quan sát đời sống của người lao động, người dân thuộc địa ở nhiều nước.</p></div></li>
+        <li><div class="y">18/6/1919</div><div><h3 data-i="269">Gửi yêu sách tới Versailles</h3><p data-i="268">Ký tên Nguyễn Ái Quốc, Người gửi tới Hội nghị Versailles bản Yêu sách của nhân dân An Nam, đòi các quyền tự do và bình đẳng cơ bản. Bản yêu sách không được chấp nhận, nhưng cái tên Nguyễn Ái Quốc bắt đầu được biết đến.</p></div></li>
+        <li><div class="y">1920</div><div><h3 data-i="267">Gặp con đường mới</h3><p data-i="266">Tháng 7/1920, Người đọc luận cương của Lênin về vấn đề dân tộc và thuộc địa. Tháng 12/1920, tại Đại hội Tours, Người bỏ phiếu tán thành gia nhập Quốc tế Cộng sản và trở thành một trong những người sáng lập Đảng Cộng sản Pháp.</p></div></li>
+        <li><div class="y">1923 – 1925</div><div><h3 data-i="265">Học tập và đào tạo cán bộ</h3><p data-i="264">Năm 1923 Người sang Liên Xô; cuối năm 1924 đến Quảng Châu (Trung Quốc). Tháng 6/1925, Người lập Hội Việt Nam Cách mạng Thanh niên và huấn luyện những lớp cán bộ đầu tiên.</p></div></li>
+        <li><div class="y">1927</div><div><h3 data-i="263">Đường Kách mệnh</h3><p data-i="262">Tập hợp các bài giảng cho cán bộ thành một cuốn sách, trình bày cách tổ chức, tuyên truyền và vận động quần chúng.</p></div></li>
+        <li><div class="y">3/2/1930</div><div><h3 data-i="261">Thống nhất các tổ chức cộng sản</h3><p data-i="260">Tại hội nghị ở Hương Cảng, các tổ chức cộng sản trong nước hợp nhất thành Đảng Cộng sản Việt Nam, đặt nền tảng tổ chức cho phong trào.</p></div></li>
+        <li><div class="y">1931 – 1940</div><div><h3 data-i="259">Những năm gian khó</h3><p data-i="258">Người bị bắt ở Hồng Kông (1931) và sau đó tiếp tục hoạt động ở nước ngoài trong điều kiện bị theo dõi, lúc ở Liên Xô, lúc ở Trung Quốc.</p></div></li>
+        <li><div class="y">28/1/1941</div><div><h3 data-i="257">Trở về Tổ quốc</h3><p data-i="256">Sau khoảng ba mươi năm, Người về nước qua cột mốc biên giới ở Pác Bó (Cao Bằng). Tháng 5/1941, Mặt trận Việt Minh ra đời, tập hợp mọi tầng lớp yêu nước. Cũng trong năm này, Người viết diễn ca Lịch sử nước ta.</p></div></li>
+        <li><div class="y">1945</div><div><h3 data-i="255">Cách mạng Tháng Tám và Tuyên ngôn Độc lập</h3><p data-i="254">Sau khi Nhật đầu hàng, Tổng khởi nghĩa thành công. Ngày 2/9/1945 tại Ba Đình, Người đọc Tuyên ngôn Độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.</p></div></li>
+      </ol>
+    </div>
+  </section>
+  <div class="sec-head wrap reveal" id="cot-moc">
+    <div data-i="253" class="kicker">03 — Cùng dân tộc</div>
+    <h2 data-i="252">Những người <em>đi cùng</em> qua các cột mốc kháng chiến</h2>
+    <p data-i="251" class="lead" style="margin-left:auto;margin-right:auto">Không ai làm nên lịch sử một mình. Dưới đây là một số cột mốc và những gương mặt gắn với chúng; danh sách còn xa mới đủ.</p>
+  </div>
+  <section class="block" style="border-top:0;padding-top:20px">
+    <div class="wrap">
+      <div class="feature reveal">
+        <figure class="plate">
+          <div class="ph"><img src="images/hero.jpg" alt="Cờ trên hầm chỉ huy Điện Biên Phủ, 1954" loading="lazy" style="object-position: 55% 40%"></div>
+          <figcaption data-i="250">Cờ trên hầm chỉ huy Điện Biên Phủ, 1954</figcaption>
+        </figure>
+        <div>
+          <h3 data-i="249">Võ Nguyên Giáp: từ thầy giáo sử đến Đại tướng</h3>
+          <p data-i="248">Sinh năm 1911 ở Quảng Bình, Võ Nguyên Giáp từng dạy lịch sử ở Hà Nội trước khi hoạt động cách mạng. Ngày 22/12/1944 ông được giao thành lập Đội Việt Nam Tuyên truyền Giải phóng quân, tiền thân của Quân đội nhân dân Việt Nam, rồi trở thành Tổng tư lệnh.</p>
+          <p data-i="247">Ở Điện Biên Phủ (1954), ông chịu trách nhiệm chỉ huy chiến dịch và quyết định đổi phương châm sang “đánh chắc, tiến chắc” vì thấy rủi ro quá cao. Ông mất năm 2013, thọ 102 tuổi.</p>
+          <div data-i="246" class="key"><b>Điểm chốt</b>Một người thầy dạy sử hiểu rằng thắng lợi đến từ chuẩn bị kỹ và dám đổi cách làm khi thực tế thay đổi.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="deep" style="padding-top:0">
+    <div class="grid">
+      <article class="an olive wide reveal">
+        <div data-i="245" class="tag">Các cột mốc</div>
+        <h3 data-i="244">Từ lập đội quân đầu tiên đến ngày thống nhất</h3>
+        <table class="cmp">
+          <thead><tr><th data-i="243">Cột mốc</th><th data-i="242">Người tiêu biểu</th><th data-i="241">Điều đáng nhớ</th></tr></thead>
+          <tbody><tr><td data-i="240">22/12/1944 — Đội Việt Nam Tuyên truyền Giải phóng quân</td><td data-i="239">Võ Nguyên Giáp</td><td data-i="238">Đội quân đầu tiên của Quân đội nhân dân Việt Nam, ban đầu chỉ vài chục người.</td></tr><tr><td data-i="237">19–20/12/1946 — Toàn quốc kháng chiến</td><td data-i="236">Hồ Chí Minh</td><td data-i="235">Lời kêu gọi toàn quốc kháng chiến mở đầu cuộc kháng chiến chống Pháp; Chính phủ và các cơ quan rút lên căn cứ Việt Bắc.</td></tr><tr><td data-i="234">Thu – đông 1950 — Chiến dịch Biên giới</td><td data-i="233">Võ Nguyên Giáp (chỉ huy chiến dịch)</td><td data-i="232">Mở thông đường biên giới Việt–Trung, giành thế chủ động trên chiến trường Bắc Bộ.</td></tr><tr><td data-i="231">13/3 – 7/5/1954 — Điện Biên Phủ</td><td data-i="230">Võ Nguyên Giáp; Phạm Văn Đồng (trưởng đoàn đàm phán ở Genève)</td><td data-i="229">Chiến thắng quân sự mở đường cho Hiệp định Genève ngày 21/7/1954.</td></tr><tr><td data-i="228">18 – 29/12/1972 — Hà Nội 12 ngày đêm</td><td data-i="227">Quân và dân Hà Nội</td><td data-i="226">Chiến dịch phòng không bảo vệ Hà Nội, thường được gọi là “Điện Biên Phủ trên không”.</td></tr><tr><td data-i="225">27/1/1973 — Hiệp định Paris</td><td data-i="224">Lê Đức Thọ, Xuân Thủy, Nguyễn Thị Bình</td><td data-i="223">Những nhà đàm phán nhiều năm trên bàn hội nghị; bà Nguyễn Thị Bình ký Hiệp định với tư cách ngoại trưởng Chính phủ Cách mạng lâm thời.</td></tr><tr><td data-i="222">26 – 30/4/1975 — Chiến dịch Hồ Chí Minh</td><td data-i="221">Văn Tiến Dũng (tư lệnh), Phạm Hùng (chính ủy)</td><td data-i="220">Chiến dịch cuối cùng, kết thúc bằng việc giải phóng Sài Gòn ngày 30/4/1975.</td></tr></tbody>
+        </table>
+      </article>
+    </div>
+    <p data-i="219" class="nameless reveal">Phía sau mỗi cột mốc là rất nhiều dân công, bộ đội, thanh niên xung phong, những người mẹ, người vợ ở hậu phương. Họ là phần lịch sử thường ít được ghi tên nhất.</p>
+  </section>
+  <div class="sec-head wrap reveal" id="bai-hoc">
+    <div data-i="218" class="kicker">04 — Bài học</div>
+    <h2 data-i="217">Sáu bài học cho <em>thế hệ sau</em></h2>
+    <p data-i="216" class="lead" style="margin-left:auto;margin-right:auto">Đây là cách đọc lại hành trình ấy, không phải kết luận duy nhất; mỗi người có thể rút ra điều của riêng mình.</p>
+  </div>
+  <section class="deep" style="padding-top:0">
+    <div class="grid">
+      <article class="an peach reveal">
+        <div data-i="215" class="tag">Bài học 1</div>
+        <h3 data-i="214">Đi ra để hiểu, rồi mới chọn đường</h3>
+        <p data-i="213">Người không chọn ngay một con đường có sẵn mà đi tìm hiểu thế giới trong nhiều năm. Học từ bên ngoài, nhưng chọn lọc cho phù hợp với đất nước mình.</p>
+        <div data-i="212" class="key"><b>Điểm chốt</b>Hiểu rộng trước khi quyết định.</div>
+      </article>
+      <article class="an olive reveal">
+        <div data-i="211" class="tag">Bài học 2</div>
+        <h3 data-i="210">Đặt lợi ích dân tộc lên trước</h3>
+        <p data-i="209">Từ bản yêu sách 1919 đến Tuyên ngôn Độc lập 1945, mục tiêu xuyên suốt là quyền độc lập và bình đẳng cho dân tộc. Năm 1966, Người nhấn mạnh: “Không có gì quý hơn độc lập, tự do.”</p>
+        <div data-i="208" class="key"><b>Điểm chốt</b>Một mục tiêu rõ ràng giữ người ta đi tiếp qua nhiều thất bại.</div>
+      </article>
+      <article class="an taupe reveal">
+        <div data-i="207" class="tag">Bài học 3</div>
+        <h3 data-i="206">Dựa vào dân và đoàn kết</h3>
+        <p data-i="205">Mặt trận Việt Minh (1941) tập hợp mọi tầng lớp yêu nước. Các chiến dịch lớn như Điện Biên Phủ không thể có nếu thiếu dân công và hậu phương.</p>
+        <div data-i="204" class="key"><b>Điểm chốt</b>Sức mạnh đến từ số đông được tổ chức và tin vào mục tiêu chung.</div>
+      </article>
+      <article class="an brown reveal">
+        <div data-i="203" class="tag">Bài học 4</div>
+        <h3 data-i="202">Độc lập phải gắn với đời sống người dân</h3>
+        <p data-i="201">Ngày 3/9/1945, ngay sau khi nước nhà độc lập, Người nói rằng nếu dân không được hưởng hạnh phúc và tự do thì độc lập cũng chẳng có nghĩa lý gì.</p>
+        <div data-i="200" class="key"><b>Điểm chốt</b>Mục tiêu cuối cùng là cuộc sống tốt hơn cho con người.</div>
+      </article>
+      <article class="an peach reveal">
+        <div data-i="199" class="tag">Bài học 5</div>
+        <h3 data-i="198">Học lịch sử để hiểu mình</h3>
+        <p data-i="197">Năm 1941, Người viết diễn ca Lịch sử nước ta, mở đầu bằng hai câu: “Dân ta phải biết sử ta, / Cho tường gốc tích nước nhà Việt Nam.” Chính Võ Nguyên Giáp từng là thầy dạy sử.</p>
+        <div data-i="196" class="key"><b>Điểm chốt</b>Biết mình từ đâu đến là nền tảng để biết mình sẽ đi đâu.</div>
+      </article>
+      <article class="an olive reveal">
+        <div data-i="195" class="tag">Bài học 6</div>
+        <h3 data-i="194">Biết đổi cách làm khi thực tế thay đổi</h3>
+        <p data-i="193">Tháng 1/1954, Võ Nguyên Giáp đổi phương châm tác chiến ở Điện Biên Phủ vì nhận thấy rủi ro, dù việc đó khiến kế hoạch phải kéo dài. Dám thừa nhận điều chưa ổn để sửa là một phẩm chất khó.</p>
+        <div data-i="192" class="key"><b>Điểm chốt</b>Kiên định về mục tiêu, linh hoạt về cách làm.</div>
+      </article>
+    </div>
+  </section>
+  <div class="sec-head wrap reveal" id="truyen-lai">
+    <div data-i="191" class="kicker">05 — Truyền lại</div>
+    <h2 data-i="190">Làm gì để <em>truyền lại</em> cho thế hệ sau?</h2>
+    <p data-i="189" class="lead" style="margin-left:auto;margin-right:auto">Hiểu lịch sử không dừng ở việc đọc. Dưới đây là ba việc nhỏ ai cũng làm được.</p>
+  </div>
+  <section class="block" style="border-top:0;padding-top:20px">
+    <div class="wrap">
+      <div class="cols" style="margin-top:0">
+        <article class="col reveal"><div class="no">I</div><h3 data-i="188">Đọc nguồn gốc</h3><p data-i="187">Đọc trực tiếp các tư liệu: Bản án chế độ thực dân Pháp (1925), Đường Kách mệnh (1927), Nhật ký trong tù (1942–1943) và Tuyên ngôn Độc lập (1945). Đọc văn bản gốc giúp bạn tự cảm nhận thay vì chỉ nghe kể lại.</p></article>
+        <article class="col reveal"><div class="no">II</div><h3 data-i="186">Đến tận nơi</h3><p data-i="185">Những địa điểm lịch sử cho cảm giác mà sách không có: Bến Nhà Rồng (TP. Hồ Chí Minh), Khu di tích Kim Liên (Nghệ An), Pác Bó (Cao Bằng), Quảng trường Ba Đình và Bảo tàng Hồ Chí Minh (Hà Nội), Điện Biên Phủ.</p></article>
+        <article class="col reveal"><div class="no">III</div><h3 data-i="184">Kể lại</h3><p data-i="183">Hỏi ông bà, cha mẹ về những năm tháng họ đã sống, ghi âm hoặc chép lại, giữ gìn thư từ và ảnh cũ. Lịch sử của một gia đình chính là một mảnh của lịch sử dân tộc.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="deep" style="padding-top:0">
+    <p data-i="182" class="note reveal" style="margin-top:0">Lưu ý: nội dung tổng hợp từ kiến thức lịch sử phổ thông. Một số chi tiết tiểu sử, đặc biệt các năm 1911–1917, còn được các nhà sử học thảo luận và nên được đối chiếu với tài liệu của bảo tàng, viện sử học và các công trình nghiên cứu chính thống.</p>
+  </section>
+  <section class="jump">
+    <div class="wrap reveal">
+      <h2 data-i="175">Xem lại: <em>các thời kỳ</em></h2>
+      <p data-i="176">Sáu giai đoạn lịch sử qua tranh và ảnh tư liệu.</p>
+      <a data-i="177" href="thoi-ky" class="cta solid">Các thời kỳ →</a><a data-i="116" href="./" class="cta">Về trang chủ</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <div data-i="51">
+      <b>SỬ KÝ STUDIO</b>
+      Landing page lịch sử Việt Nam.
+    </div>
+    <div>
+      <b data-i="52">Nguồn ảnh</b>
+      <ul>
+        <li data-i="53">Wikimedia Commons: trống đồng Ngọc Lũ; Ngọ Môn thời Việt Nam Cộng hòa; tranh Chiếm Sài Gòn của A. Morel-Fatio; ảnh Ba Đình 1945; ảnh Điện Biên Phủ — phạm vi công cộng.</li>
+        <li data-i="54">Tượng và đền thờ Trần Hưng Đạo: Wikimedia Commons, CC0.</li>
+        <li data-i="55">Cổng Văn Miếu, Hà Nội: Wikimedia Commons, CC BY 4.0.</li>
+        <li data-i="181">Chân dung Nguyễn Ái Quốc (1922) và Hồ Chí Minh (1946): Wikimedia Commons, phạm vi công cộng. Bến Nhà Rồng: Wikimedia Commons, CC0.</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hdr = document.querySelector('header');
+  const onScroll = () => hdr.classList.toggle('solid', scrollY > 60);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+<script src="lich-su-i18n.js"></script>
+</body>
+</html>

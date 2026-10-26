@@ -132,14 +132,15 @@
   .more { display: inline-block; margin-top: 24px; font-size: 13px; letter-spacing: .24em; text-transform: uppercase; border-bottom: 1px solid currentColor; padding-bottom: 3px; transition: opacity .2s; }
   .more:hover { opacity: .65; }
   .go { padding: 40px 0 110px; }
-  .go .two { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .go .two { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
   .go a.card { display: block; padding: 48px 40px; transition: transform .4s, background .3s; }
   .go a.card:hover { transform: translateY(-4px); }
   .go .card.peach { background: var(--peach); color: var(--ink); }
   .go .card.brown { background: #4a2b23; color: var(--peach); }
+  .go .card.taupe { background: #a79d88; color: var(--ink); }
   .go .card small { font-size: 13px; letter-spacing: .3em; text-transform: uppercase; opacity: .7; }
   .go .card h3 { font: 400 clamp(30px, 3.6vw, 48px)/1.08 var(--display); margin: 14px 0 12px; }
-  .go .card p { font-size: 18px; max-width: 420px; }
+  .go .card p { font-size: 17px; max-width: 420px; }
   .go .card span { display: inline-block; margin-top: 22px; font-size: 13px; letter-spacing: .24em; text-transform: uppercase; border-bottom: 1px solid currentColor; padding-bottom: 3px; }
   .go h2 { font: 400 clamp(32px, 4.2vw, 54px)/1.1 var(--display); text-align: center; margin-bottom: 40px; }
   .go h2 em { color: var(--peach); }
@@ -209,6 +210,7 @@
     <nav>
       <a data-i="1" href="thoi-ky">Thời kỳ</a>
       <a data-i="2" href="dong-thoi-gian">Dòng thời gian</a>
+      <a data-i="180" href="hanh-trinh">Hành trình</a>
       <a data-i="3" href="#loi-ket">Lời kết</a>
     </nav>
     <button class="lang" id="lang" type="button" aria-label="Switch language">EN</button>
@@ -288,6 +290,7 @@
       <div class="two">
         <a class="card peach" href="thoi-ky"><small data-i="43">Trang riêng</small><h3 data-i="44">Các thời kỳ</h3><p data-i="45">Sáu giai đoạn qua tranh, ảnh tư liệu, kèm bốn bài phân tích vì sao và hệ quả.</p><span data-i="46">Xem chi tiết →</span></a>
         <a class="card brown" href="dong-thoi-gian"><small data-i="43">Trang riêng</small><h3 data-i="2">Dòng thời gian</h3><p data-i="47">Mười hai cột mốc trên dải ruy băng, kèm các phân tích về thời thuộc địa và kháng chiến.</p><span data-i="48">Xem dòng thời gian →</span></a>
+        <a class="card taupe" href="hanh-trinh"><small data-i="43">Trang riêng</small><h3 data-i="180">Hành trình</h3><p data-i="179">Hoàn cảnh, hành trình ra đi tìm đường cứu nước, những người cùng dân tộc qua các cột mốc kháng chiến và bài học cho thế hệ sau.</p><span data-i="178">Xem hành trình →</span></a>
       </div>
     </div>
   </section>
